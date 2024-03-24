@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo de Aplicativo React com CDN</title>
+  <script src="js-react/react-development.js"></script>
+  <script src="js-react/react-dom-development.js"></script>
+  <script src="js-react/babel.min.js"></script>
+</head>
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const App = () => {
+        const items = [
+        { id: 1, name: 'JS Vanilha', ref: 'index.html'},
+        { id: 2, name: 'React', ref: 'react.html'},
+        { id: 3, name: 'Vue', ref: 'vue.html'}
+        ];
+    
+        return (
+          <div>
+            <h1>Lista de Itens com React</h1>
+            <ul>
+              {items.map(item => (
+                <li key={item.id}>
+                  <a href={`${item.ref}`}>{item.name}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+      };
+    
+      ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+    
+    </body>
+
+</body>
+</html>
