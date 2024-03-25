@@ -9,33 +9,6 @@
 
 <div id="app"></div>
 
-<script>
-  function renderItems() {
-    const items = [
-    { id: 1, name: 'JS Vanilha', ref: 'index.html'},
-    { id: 2, name: 'React', ref: 'react.html'},
-    { id: 3, name: 'Vue', ref: 'vue.html'}
-    ];
-
-    const app = document.getElementById('app');
-    const h1 = document.createElement('h1');
-    h1.textContent = 'Lista de Itens com JS Vanilha';
-    app.appendChild(h1);
-
-    const ul = document.createElement('ul');
-    items.forEach(item => {
-      const li = document.createElement('li');
-      const link = document.createElement('a');
-      link.href = `${item.ref}`;
-      link.textContent = item.name;
-      li.appendChild(link);
-      ul.appendChild(li);
-    });
-    app.appendChild(ul);
-  }
-
-  renderItems();
-</script>
-
+<script type="module" src="js/App.js"></script>
 </body>
 </html>
